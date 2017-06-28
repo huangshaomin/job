@@ -59,14 +59,15 @@
 		box-sizing: border-box;
 		overflow:hidden;                                                              
 	}
-    ul.main li.eighth{
-        padding-top: 90px;
+    ul.main li.sixth{
+        padding-top: 280px;
     }
 	ul.main .first{
 		color:#fff;
 		text-align: center;
 		font-size: 20px;
 		font-weight: bold;		
+		padding-top: 250px;
 	}
 	ul.main .first li{
 		line-height: 70px;
@@ -86,9 +87,9 @@
 		box-shadow: 0 0 10px #999;
 	}
 	.same li{
-		height: 50px;
+		height: 75px;
 		border-bottom: 1px solid #000;
-		line-height: 50px;
+		line-height: 75px;
 	}
 	.same li span{
 		width: 300px;
@@ -106,16 +107,15 @@
 	.same li.nborder{
 		border-bottom: none;
 	}
-	ul.seven.same{
-		height: 450px;
-	}
-	ul.hefu.same li{
-		line-height: 75px;
+	ul.single.same{
 		height: 75px;
 	}
-	ul.hefu.same {
+	ul.two.same{
 		height: 300px;
 	}
+	ul.three.same{
+		height: 375px;
+	}	
 	ul.four.same{
 		height: 300px;
 	}
@@ -124,6 +124,9 @@
 	}
 	ul.six.same{
 		height: 400px;
+	}
+	ul.seven.same{
+		height: 450px;
 	}
 	
 
@@ -140,13 +143,13 @@ $(function() {
 		$(element).css('background',colors[index])
 		
     });
-	$('ol li').click(function(event) {
+/*	$('ol li').click(function(event) {
         $(this).addClass('current').siblings().removeClass('current');
 		
 		var winHei = $(window).height();
 		$('html,body').animate({scrollTop: winHei*$(this).index()},600)
 		
-    });
+    });*/
 	var num = 0;
 	var timer = null;
 	$(document).mousewheel(function(e,d){
@@ -154,13 +157,13 @@ $(function() {
 		timer=setTimeout(function(){
 			num=num - d;
 			if(num<0){num=0}
-			if(num>9){num=9}
+			if(num>5){num=5}
 			
 			
 			$('ul').animate({'top':-num*100+'%'},500)
 			$('ol li').eq(num).addClass('current').siblings().removeClass('current');
 			console.log(d)	
-		},200)
+		},1)
 		
 	})
 	
@@ -173,15 +176,13 @@ $(function() {
 <ul class="main">
 	<li class="first">
 		<ul>
-			<li class="big">黄少敏个人作品</li>
-			<li>一 文案（滑鼠标！往下看！）</li>
-			<li>二 诗词（<a href="http://caihaozhong.github.io/Job/poem.htm" target="_blank">点我！点我！</a>）</li>
-			<li>三 段子（<a href="http://caihaozhong.github.io/Job/duanzhi.htm" target="_blank">戳我！戳我！</a>）</li>
+			<li class="big">黄少敏个人作品节选</li>
+			<li>滑动鼠标往下看！</li>
 		</ul>
 	</li>
 	<li class="second">
-		<ul class="five same">
-			<li style="font-size:24px;font-weight:bold;">美食导报<span class="red">· 新闻事件类</span></li>
+		<ul class="two same">
+			<li style="font-size:24px;font-weight:bold;">美食导报<span class="red">· 重大新闻</span></li>
 			<li>
 				<span style="font-size:20px;font-weight:bold;">作 品 序 号</span>
 				<span style="font-size:20px;font-weight:bold;">作 品 名 称</span>
@@ -190,34 +191,19 @@ $(function() {
 			<li>
 				<span>1</span>
 				<span>虚惊一场！中华老字号大同酒家只是暂时结业调整，预计数月后重开！</span>
-				<span><a href="http://www.dwz.cn/2QhLfv" target="_blank">查看</a></span>
-			</li>
-			<li>
-				<span>2</span>
-				<span>惊爆！《舌尖上的中国》推介美食也中招，地沟油究竟还有谁能消灭你！</span>
-				<span><a href="http://www.dwz.cn/2QidFy" target="_blank">查看</a></span>
-			</li>
-			<li>
-				<span>3</span>
-				<span>广州某大型海鲜餐饮企业采购收取回购被抓现形！</span>
-				<span><a href="http://www.dwz.cn/2QidFy" target="_blank">查看</a></span>
-			</li>
-			<li>
-				<span>4</span>
-				<span>悠悠粤菜书佳史，广州酒家将上市！</span>
-				<span><a href="http://www.dwz.cn/2QidFy" target="_blank">查看</a></span>
+				<span><a href="http://mp.weixin.qq.com/s/OVWYt4k1EN7OUTGueTnfLw" target="_blank">查看</a></span>
 			</li>
 			<li class="nborder">
-				<span>5</span>
-				<span>台风“妮妲”来了！我们应该怎么做？</span>
-				<span><a href="http://www.dwz.cn/2QidFy" target="_blank">查看</a></span>
-			</li>			
+				<span>2</span>
+				<span>广州某大型海鲜餐饮企业采购收取回购被抓现形！</span>
+				<span><a href="http://mp.weixin.qq.com/s/d-MWOTtCP6BTvUZ6HhYjEA" target="_blank">查看</a></span>
+			</li>	
 		</ul>
 	</li>	
 
 	<li class="third">
-		<ul class="six same">
-			<li style="font-size:24px;font-weight:bold;">美食导报<span class="red">· 行业专题</span></li>
+		<ul class="three same">
+			<li style="font-size:24px;font-weight:bold;">美食导报<span class="red">· 行业热点</span></li>
 			<li>
 				<span style="font-size:20px;font-weight:bold;">作 品 序 号</span>
 				<span style="font-size:20px;font-weight:bold;">作 品 名 称</span>
@@ -226,69 +212,23 @@ $(function() {
 			<li>
 				<span>1</span>
 				<span>米其林来了，广州你准备好了吗？</span>
-				<span><a href="http://www.dwz.cn/2QhLfv" target="_blank">查看</a></span>
+				<span><a href="https://mp.weixin.qq.com/s/utCgqVZp0Gkc1yy27ir1JA" target="_blank">查看</a></span>
 			</li>
 			<li>
 				<span>2</span>
 				<span>收不收茶位费？广州人有话说！</span>
-				<span><a href="http://www.dwz.cn/2QidFy" target="_blank">查看</a></span>
-			</li>
-			<li>
-				<span>3</span>
-				<span>干货丨电子餐单VS传统菜谱，要科技也要讲情怀！</span>
-				<span><a href="http://www.dwz.cn/2QidFy" target="_blank">查看</a></span>
-			</li>
-			<li>
-				<span>4</span>
-				<span>餐饮业流行拜师风，是作秀还是真传承？</span>
-				<span><a href="http://www.dwz.cn/2QidFy" target="_blank">查看</a></span>
-			</li>
-			<li>
-				<span>5</span>
-				<span>经过一年大洗牌的小龙虾，今年能否继续“虾虾霸霸”？</span>
-				<span><a href="http://www.dwz.cn/2QidFy" target="_blank">查看</a></span>
-			</li>			
-			<li class="nborder">
-				<span>6</span>
-				<span>为一杯奶茶排上几个小时，你如何解读“喜茶”？</span>
-				<span><a href="http://www.dwz.cn/2QidFy" target="_blank">查看</a></span>
-			</li>			
-		</ul>
-	</li>
-
-	<li class="fourth">
-		<ul class="four same">
-			<li style="font-size:24px;font-weight:bold;">美食导报<span class="red">· 美食娱乐</span></li>
-			<li>
-				<span style="font-size:20px;font-weight:bold;">作 品 序 号</span>
-				<span style="font-size:20px;font-weight:bold;">作 品 名 称</span>
-				<span style="font-size:20px;font-weight:bold;">作 品 链 接</span>
-			</li>
-			<li>
-				<span>1</span>
-				<span>咱大广东有这么多好吃的，哪还要吃福建人！</span>
-				<span><a href="http://www.dwz.cn/2QhLfv" target="_blank">查看</a></span>
-			</li>
-			<li>
-				<span>2</span>
-				<span>老板说，我们年轻人不懂浪漫，所以我们今天来真的！</span>
-				<span><a href="http://www.dwz.cn/2QidFy" target="_blank">查看</a></span>
-			</li>
-			<li>
-				<span>3</span>
-				<span>广州最土豪餐厅PK最亲民小吃！你站谁的队？</span>
-				<span><a href="http://www.dwz.cn/2QidFy" target="_blank">查看</a></span>
-			</li>
-			<li class="nborder">
-				<span>4</span>
-				<span>胶己人：潮人遍布全世界，美食尽在我舌尖</span>
-				<span><a href="http://www.dwz.cn/2QidFy" target="_blank">查看</a></span>
+				<span><a href="http://mp.weixin.qq.com/s/rYSHXZSOWZtQzZcpxSmOFQ" target="_blank">查看</a></span>
 			</li>		
+			<li class="nborder">
+				<span>3</span>
+				<span>小心 | 老火靓汤陷入窘境，汤料恐踩法律红线</span>
+				<span><a href="http://mp.weixin.qq.com/s/Y0wcOEYPPk7XUgD_Po2wlg" target="_blank">查看</a></span>
+			</li>			
 		</ul>
 	</li>
 	
-	<li class="fifth">
-		<ul class="six same">
+	<li class="fourth">
+		<ul class="two same">
 			<li style="font-size:24px;font-weight:bold;">美食导报<span class="red">· 走街串巷</span></li>
 			<li>
 				<span style="font-size:20px;font-weight:bold;">作 品 序 号</span>
@@ -298,196 +238,41 @@ $(function() {
 			<li>
 				<span>1</span>
 				<span>奶茶炒蛋好好味！这家冰室，总有一家在你附近！</span>
-				<span><a href="http://www.dwz.cn/2QhLfv" target="_blank">查看</a></span>
+				<span><a href="http://mp.weixin.qq.com/s/DQ4WKrxAli-LPSqcWiAy1g" target="_blank">查看</a></span>
 			</li>
-			<li>
+			<li class="nborder">
 				<span>2</span>
 				<span>都吃过煲仔饭，但这些煲仔饭热门店你们不一定都吃过！</span>
-				<span><a href="http://www.dwz.cn/2QidFy" target="_blank">查看</a></span>
-			</li>
-			<li>
-				<span>3</span>
-				<span>【走街串巷】龙津有三宝，老广吃过都说好！</span>
-				<span><a href="http://www.dwz.cn/2QidFy" target="_blank">查看</a></span>
-			</li>
-			<li>
-				<span>4</span>
-				<span>90后公然“挑战”小龙虾教父！结果……</span>
-				<span><a href="http://www.dwz.cn/2QidFy" target="_blank">查看</a></span>
-			</li>
-			<li>
-				<span>5</span>
-				<span>在广州吃宵夜，你也“蠔”得起</span>
-				<span><a href="http://www.dwz.cn/2QidFy" target="_blank">查看</a></span>
-			</li>			
-			<li class="nborder">
-				<span>6</span>
-				<span>里约奥运来啦！不用去巴西，到拉丁餐厅里约！</span>
-				<span><a href="http://www.dwz.cn/2QidFy" target="_blank">查看</a></span>
-			</li>		
-		</ul>
-	</li>		
-
-	<li class="sixth">
-		<ul class="five same">
-			<li style="font-size:24px;font-weight:bold;">美食导报<span class="red">· 评测、宣传类</span></li>
-			<li>
-				<span style="font-size:20px;font-weight:bold;">作 品 序 号</span>
-				<span style="font-size:20px;font-weight:bold;">作 品 名 称</span>
-				<span style="font-size:20px;font-weight:bold;">作 品 链 接</span>
-			</li>
-			<li>
-				<span>1</span>
-				<span>冰粽VS传统糯米粽，到底谁才是您心中最爱？导报君以实拍测评解密</span>
-				<span><a href="http://www.dwz.cn/2QhLfv" target="_blank">查看</a></span>
-			</li>
-			<li>
-				<span>2</span>
-				<span>六大盆菜逐个试，好不好吃你话事！五星、素食、有盈利，总有一款适合你！</span>
-				<span><a href="http://www.dwz.cn/2QidFy" target="_blank">查看</a></span>
-			</li>
-			<li>
-				<span>3</span>
-				<span>冬至煲汤想偷懒？懒人君教你5分钟煲出广府养生靓汤！</span>
-				<span><a href="http://www.dwz.cn/2QidFy" target="_blank">查看</a></span>
-			</li>
-			<li>
-				<span>4</span>
-				<span>说起吃蟹这件事儿，老祖宗们的套路可深着呢！</span>
-				<span><a href="http://www.dwz.cn/2QidFy" target="_blank">查看</a></span>
-			</li>		
-			<li class="nborder">
-				<span>5</span>
-				<span>跨越大半个中国的虫草美食溯源之旅！</span>
-				<span><a href="http://www.dwz.cn/2QidFy" target="_blank">查看</a></span>
-			</li>		
-		</ul>
-	</li>		
-	<li class="seventh">
-		<ul class="hefu same">
-			<li style="font-size:24px;font-weight:bold;">合富金融<span class="red">· 幸福就在不远处 ·</span>宣传文案</li>
-			<li>
-				<span style="font-size:20px;font-weight:bold;">作 品 序 号</span>
-				<span style="font-size:20px;font-weight:bold;">作 品 名 称</span>
-				<span style="font-size:20px;font-weight:bold;">作 品 链 接</span>
-			</li>
-			<li>
-				<span>1</span>
-				<span>千年子画花千骨，无奈新娘却姓胡</span>
-				<span><a href="http://www.dwz.cn/2QhLfv" target="_blank">查看</a></span>
-			</li>
-			<li class="nborder">
-				<span>2</span>
-				<span>【百万大奖你做主】你投票，我送票砸！</span>
-				<span><a href="http://www.dwz.cn/2QidFy" target="_blank">查看</a></span>
-			</li>
+				<span><a href="https://mp.weixin.qq.com/s/MMJGq7QJo99wFN7UBIUVEQ" target="_blank">查看</a></span>
+			</li>	
 		</ul>
 	</li>
-    <li class="eighth">
-    	<ul class="seven same">
-    		<li style="font-size:24px;font-weight:bold;">范碗项目<span class="red">· 职场女王就业讲座 ·</span>宣传文案</li>
-    		<li>
-    			<span style="font-size:20px;font-weight:bold;">作 品 序 号</span>
-    			<span style="font-size:20px;font-weight:bold;">作 品 名 称</span>
-    			<span style="font-size:20px;font-weight:bold;">作 品 链 接</span>
-    		</li>
-    		<li>
-    			<span>1</span>
-    			<span>[有人@我]职场女王颠覆你的三观：面试并不是你想的那样</span>
-    			<span><a href="http://www.dwz.cn/2Qfa0P" target="_blank">查看</a></span>
-    		</li>
-    		<li>
-    			<span>2</span>
-    			<span>姑娘，留下你的微信！</span>
-    			<span><a href="http://www.dwz.cn/2QgeMK" target="_blank">查看</a></span>
-    		</li>
-    		<li>
-    			<span>3</span>
-    			<span>干货 | 摆脱面经桎梏，解开面试失败的心结</span>
-    			<span><a href="http://www.dwz.cn/2Qgiv5" target="_blank">查看</a></span>
-    		</li>
-    		<li>
-    			<span>4</span>
-    			<span>你相信一个智障儿的成功吗？</span>
-    			<span><a href="http://www.dwz.cn/1st--speech" target="_blank">查看</a></span>
-    		</li>
-    		<li>
-    			<span>5</span>
-    			<span>大学是所整容院？主要看气质！</span>
-    			<span><a href="http://www.dwz.cn/2QgqKg" target="_blank">查看</a></span>
-    		</li>
-    		<li>
-    			<span>6</span>
-    			<span>给我一碗82年的汤圆冷静一下</span>
-    			<span><a href="http://www.dwz.cn/2Qgpnz" target="_blank">查看</a></span>
-    		</li>
-    		<li class="nborder">
-    			<span>7</span>
-    			<span>史上颜值最高的平安夜</span>
-    			<span><a href="http://www.dwz.cn/2Qgtcf" target="_blank">查看</a></span>
-    		</li>
-    	</ul>
-    </li>
-    <li class="nineth">
-    	<ul class="four same">
-    		<li style="font-size:24px;font-weight:bold;"><span class="red">· 招聘会 ·</span>宣传文案</li>
-    		<li>
-    			<span style="font-size:20px;font-weight:bold;">作 品 序 号</span>
-    			<span style="font-size:20px;font-weight:bold;">作 品 名 称</span>
-    			<span style="font-size:20px;font-weight:bold;">作 品 链 接</span>
-    		</li>
-    		<li>
-    			<span>1</span>
-    			<span>广州冬天约会好去处</span>
-    			<span><a href="http://www.dwz.cn/2Qji46" target="_blank">查看</a></span>
-    		</li>
-    		<li>
-    			<span>2</span>
-    			<span>有了这几招，春节再也不怕各路亲戚的问候了</span>
-    			<span><a href="http://www.dwz.cn/2Qkasd" target="_blank">查看</a></span>
-    		</li>
-    		<li>
-    			<span>3</span>
-    			<span>新春招聘琅琊榜（1）</span>
-    			<span><a href="http://www.dwz.cn/2Qk6rP" target="_blank">查看</a></span>
-    		</li>
-    		<li class="nborder">
-    			<span>4</span>
-    			<span>新春招聘琅琊榜（2）</span>
-    			<span><a href="http://www.dwz.cn/2QkGQ5" target="_blank">查看</a></span>
-    		</li>
-    	</ul>
-    </li>
-    <li class="tenth">
-    	<ul class="four same">
-    		<li style="font-size:24px;font-weight:bold;"><span class="red">· 娱乐 ·</span>宣传文案</li>
-    		<li>
-    			<span style="font-size:20px;font-weight:bold;">作 品 序 号</span>
-    			<span style="font-size:20px;font-weight:bold;">作 品 名 称</span>
-    			<span style="font-size:20px;font-weight:bold;">作 品 链 接</span>
-    		</li>
-    		<li>
-    			<span>1</span>
-    			<span>为什么过年是一件这么开心的事！</span>
-    			<span><a href="http://www.dwz.cn/2QkPxX" target="_blank">查看</a></span>
-    		</li>    		
-    		<li>
-    			<span>2</span>
-    			<span>这是一封情书，写了一个青春——科比黑曼巴</span>
-    			<span><a href="http://www.dwz.cn/2Qjm63" target="_blank">查看</a></span>
-    		</li>    		
-    		<li>
-    			<span>3</span>
-    			<span>今晚，我们都是恒大人</span>
-    			<span><a href="http://www.dwz.cn/2QjT0o" target="_blank">查看</a></span>
-    		</li>
-    		<li class="nborder">
-    			<span>4</span>
-    			<span>这首暴露年龄的歌。。。</span>
-    			<span><a href="http://www.dwz.cn/2QjRjc" target="_blank">查看</a></span>
-    		</li>
-    	</ul>
-    </li>
+	
+	<li class="fifth">
+		<ul class="two same">
+			<li style="font-size:24px;font-weight:bold;">美食导报<span class="red">· 美食娱乐</span></li>
+			<li>
+				<span style="font-size:20px;font-weight:bold;">作 品 序 号</span>
+				<span style="font-size:20px;font-weight:bold;">作 品 名 称</span>
+				<span style="font-size:20px;font-weight:bold;">作 品 链 接</span>
+			</li>
+			<li>
+				<span>1</span>
+				<span>老板说，我们年轻人不懂浪漫，所以我们今天来真的！</span>
+				<span><a href="http://mp.weixin.qq.com/s/OPoVtStbb_ZuO8D5aXJ6-w" target="_blank">查看</a></span>
+			</li>
+			<li class="nborder">
+				<span>2</span>
+				<span>咱大广东有这么多好吃的，哪还要吃福建人！</span>
+				<span><a href="http://mp.weixin.qq.com/s/H6h1zBq9EmF-53uHokTHyQ" target="_blank">查看</a></span>
+			</li>				
+		</ul>
+	</li>
+	<li class="sixth">
+		<ul class="single same">
+			<li style="font-size:24px;font-weight:bold;">诗词作品<a href="https://huangshaomin.github.io/job/poem.htm" target="_blank"><span class="red">· 点击浏览</span></a></li>		
+		</ul>
+	</li>	
 </ul>
 <ol>
 	<li class="current"></li>
@@ -495,10 +280,6 @@ $(function() {
     <li></li>
     <li></li>
     <li></li>
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>
 	<li></li>
 </ol>
 </body>
